@@ -7,8 +7,9 @@ import matplotlib.pyplot as plt
 from pprint import pprint
 from tqdm import tqdm
 
-FACES_DIR_PATH  = "../CK+_lands"
-EMOTIONS_FILE   = "../CK+_lands/emotion.csv"
+FACES_DIR_PATH  = r"CK+_lands/CK+/"
+EMOTIONS_FILE   = r"CK+_lands/CK+/emotion.csv"
+#[PL] - added r-strings for windows interpretation
 EMOTIONS_INDEX  = ["happy", "fear", "surprise", 
                    "anger", "disgust", "sadness"]
 
