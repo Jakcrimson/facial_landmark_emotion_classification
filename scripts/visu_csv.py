@@ -23,18 +23,30 @@ def plot_facial_landmarks(session_data, expression_name):
     y_coords = []
 
     for i in range(0, 136, 2):
+        print(len(session_data))
         x_col_name = f'Coord_{i}'
         y_col_name = f'Coord_{i + 1}'
-        print(session_data[x_col_name])
-        x_coords.append(session_data[x_col_name])
-        y_coords.append(session_data[y_col_name])
+        x_coords.append(session_data.iloc[0][x_col_name])
+        y_coords.append(session_data.iloc[0][y_col_name])
+       
+    x_coords = np.array(x_coords[:-1])
+    y_coords = np.array(y_coords[:-1])
 
-    for i in range(len(x_coords)):
-        plt.figure()
-        plt.scatter(x_coords[:-1], y_coords[:-1])
-        plt.title(f"Expression: {expression_name}, Image {i + 1}")
-        plt.gca().invert_yaxis()
-        plt.show()
+    x_nose_mean = x_coords[32:37].mean()
+    y_nose_mean = y_coords[32:37].mean()
+    
+    center_function_x = lambda x: x - x_nose_mean
+    center_function_y = lambda y: y - y_nose_mean
+
+    x_coords = center_function_x(x_coords[:-1]) #jspas pourquoi mais le dernier element des y_coords ligne 30 c'est une chaine ' ' donc je suis obligé de l'enlever et celui
+                                                # de x_coords aussi, donc on se retrouve avec 67 points, donc c'est nul.
+    y_coords = center_function_y(y_coords[:-1])
+
+    plt.figure(figsize=(2, 6))
+    plt.scatter(-y_coords,x_coords)
+    plt.title(f"Expression: {expression_name}, Image {i + 1}")
+    plt.gca().invert_yaxis()
+    plt.show()
 
 
 
@@ -73,4 +85,5 @@ print(visages.shape, index.shape)
 #### TESTING, ATTENTION PLEASE ####
 omlands_filename =  r"CK+_lands/CK+/S010/omlands.csv"
 session_data = pd.read_csv(omlands_filename, delimiter=';', names=['file'] + [f'Coord_{i}' for i in range(0, 136)])
+print(session_data["Coord_15"])
 plot_facial_landmarks(session_data.tail(1), EMOTIONS_INDEX[5])
