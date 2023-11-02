@@ -19,11 +19,13 @@ def plot_facial_landmarks(session_data, expression_name):
         session_data : the session
         expression_name : the corresponding emotion
     """
+    print(session_data)
+    print(f"{session_data['file']=}")
     x_coords = []
     y_coords = []
 
     for i in range(0, 136, 2):
-        print(len(session_data))
+        # print(len(session_data))
         x_col_name = f'Coord_{i}'
         y_col_name = f'Coord_{i + 1}'
         x_coords.append(session_data.iloc[0][x_col_name])
@@ -78,12 +80,17 @@ for dir in FACE_DIR:
         visages = visages[:, np.newaxis]
         visages = visages.reshape((-1, 68, 2))
 
-print(visages.shape, index.shape)
+# print(visages.shape, index.shape)
 
 
 
 #### TESTING, ATTENTION PLEASE ####
 omlands_filename =  r"CK+_lands/CK+/S010/omlands.csv"
-session_data = pd.read_csv(omlands_filename, delimiter=';', names=['file'] + [f'Coord_{i}' for i in range(0, 136)])
-print(session_data["Coord_15"])
+names = ['file'] + [f'Coord_{i}' for i in range(0, 136)]
+session_data = pd.read_csv(omlands_filename, delimiter=';')# , names=names)
+# session_data = pd.read_csv(omlands_filename, delimiter=';', header=None, names=['file'] + [f'Coord_{i}{j}' for i in range(1, 69) for j in ["x", "y"]])
+session_data = session_data.iloc[:, 0:-1]
+session_data.columns = names
+
+# print(session_data["Coord_15"])
 plot_facial_landmarks(session_data.tail(1), EMOTIONS_INDEX[5])
