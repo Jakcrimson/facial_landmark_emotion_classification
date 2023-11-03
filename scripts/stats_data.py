@@ -31,7 +31,8 @@ for line in range(len(emotions)):
 pprint(nb_ex_emotions)
 
 plt.pie([nb_ex_emotions[x] for x in EMOTIONS_INDEX], 
-        labels=EMOTIONS_INDEX)
+        labels=EMOTIONS_INDEX, autopct='%1.0f%%')
+plt.title("Number of instances of each class in emotion.csv")
 plt.show()
 
 
@@ -73,7 +74,8 @@ for face in tqdm(faces_dir):
 pprint(nb_line_emotions)
 
 plt.pie([nb_line_emotions[x] for x in EMOTIONS_INDEX], 
-        labels=EMOTIONS_INDEX)
+        labels=EMOTIONS_INDEX, autopct='%1.0f%%')
+plt.title("Number of instances of each class in all the different session files")
 plt.show()
 
 
