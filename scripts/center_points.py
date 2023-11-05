@@ -51,6 +51,7 @@ out: array_like
 
 # TMP USAGE 
 # Used to display all faces, centered with the previous function
+"""
 for face_path in tqdm(os.listdir(FACE_DIR)):
     face_path = os.path.join(FACE_DIR, face_path)
 
@@ -66,7 +67,8 @@ for face_path in tqdm(os.listdir(FACE_DIR)):
 
         for tmp_visage in visage:
             mean_center_face(tmp_visage, display_face=True)
-
+"""
+            
 # print(visage)
 # plt.scatter(visage[:, 0], -visage[:, 1])
 # plt.scatter(visage[27: 31, 0], -visage[27: 31, 1], c="r")
