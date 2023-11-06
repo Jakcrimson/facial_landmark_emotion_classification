@@ -45,7 +45,7 @@ def stratified_sampling(X, y, test_size=0.3):
         test_size (float, optional): pct of data that should be the testing data. Defaults to 0.3.
 
     Returns:
-        array-like : X_train, X_test, y_train, y_test : the two datasets (X_.. , y_..) used to train and test the model.
+        array-like : X_train, X_test, y_train, y_test : the two datasets (X_.. , y_..) used to train and test the model but they are balanced.
     """
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=test_size, stratify=y, random_state=42)
     return X_train, X_test, y_train, y_test
