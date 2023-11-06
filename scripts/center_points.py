@@ -45,10 +45,11 @@ out: array_like
     return new_face_points
 
 
-# # TMP USAGE 
-# # Used to display all faces, centered with the previous function
-# for face_path in tqdm(os.listdir(FACE_DIR)):
-#     face_path = os.path.join(FACE_DIR, face_path)
+# TMP USAGE 
+# Used to display all faces, centered with the previous function
+"""
+for face_path in tqdm(os.listdir(FACE_DIR)):
+    face_path = os.path.join(FACE_DIR, face_path)
 
 #     if os.path.isdir(face_path):
 #         face = os.path.join(face_path, FACE_FILE)
@@ -60,9 +61,10 @@ out: array_like
 #         # reshapes the data, so each row is a file, and the data is grouped by two, for x and y coordinates
 #         visage = visage.reshape((-1, 68, 2))
 
-#         for tmp_visage in visage:
-#             mean_center_face(tmp_visage, display_face=True)
-
+        for tmp_visage in visage:
+            mean_center_face(tmp_visage, display_face=True)
+"""
+            
 # print(visage)
 # plt.scatter(visage[:, 0], -visage[:, 1])
 # plt.scatter(visage[27: 31, 0], -visage[27: 31, 1], c="r")
