@@ -53,9 +53,9 @@ pprint(all_emotions)
 #     plt.show()
 
 
-# save the mean faces per emotion, with first column being the x, the second y (so one line = one point)
+# save the mean faces per emotion, with all data in one line
 if not os.path.exists(OUTPUT_FACE_DIR):
     os.mkdir(OUTPUT_FACE_DIR)
 for emotion in all_emotions.keys():
-    np.savetxt(os.path.join(OUTPUT_FACE_DIR, f"{emotion}.csv"), all_emotions[emotion].reshape(68, 2), delimiter=";")
+    np.savetxt(os.path.join(OUTPUT_FACE_DIR, f"{emotion}.csv"), all_emotions[emotion].reshape((1, -1)), delimiter=";")
 
