@@ -1,5 +1,6 @@
 from tqdm import tqdm
 from sklearn.model_selection import train_test_split
+from PIL import Image
 
 import os
 import numpy as np
@@ -37,11 +38,11 @@ for split_name in ["train", "val", "test"]:
 
 # retrieve the emotions dataset
 emotions = pd.read_csv(EMOTIONS_INDEX, header=0, delimiter=";")
-
-# creation of the dataset split (here 70-20-10)
+print(emotions)
+# creation of the dataset split (here 70-15-15)
 dataset_split = np.arange(len(emotions))
-X_train, X_test = train_test_split(dataset_split, test_size=10)
-X_train, X_val  = train_test_split(X_train, test_size=20)
+X_train, X_test = train_test_split(dataset_split, stratify=emotions["emotion"], test_size=15) #stratify for proportionate class balance
+X_train, X_val  = train_test_split(X_train, stratify=emotions.iloc[X_train]["emotion"], test_size=15) #stratify for proportionate class balance
 
 # create all the faces 
 for emo_id in tqdm(emotions.index[4:]):
