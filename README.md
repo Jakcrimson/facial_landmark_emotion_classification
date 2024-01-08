@@ -62,3 +62,10 @@ We will answer the main question above by relying on quantification, i.e., throu
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 Developed by Pierre LAGUE and François MULLER (@franzele21) at the University of Lille, France. 🚀📊
 
+---
+
+# For Mr TOMMASI
+
+In order to evaluate our work you have the pdf report at the root of the folder as well as our notebooks and additionnal scripts in the script folder. For additionnal code, the archive folder will contain a wider range of our work.
+
+In the script folder, the standard classification methods are in the file named **standard_approaches.ipynb**, the Deep Learning approach is in the file named **deep_learning_approach.ipynb**. Both are commented and the outputs have not been cleared **we recommend to only clear the outputs if it is not counter-indicated**, some cells are extremely computationally demanding and will quite litteraly crash your computer (we bought the whole PC, we will use the whole PC). The **deep_learning_approach** notebook is okay to "run all".
