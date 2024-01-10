@@ -1,5 +1,15 @@
 # Facial Expression Classification Project 👨‍💻:
 
+---
+
+# For Mr TOMMASI
+
+In order to evaluate our work you have the pdf report at the root of the folder as well as our notebooks and additionnal scripts in the script folder. For additionnal code, the archive folder will contain a wider range of our work.
+
+In the script folder, the standard classification methods are in the file named **standard_approaches.ipynb**, the Deep Learning approach is in the file named **deep_learning_approach.ipynb**. Both are commented and the outputs have not been cleared **we recommend to only clear the outputs if it is not counter-indicated**, some cells are extremely computationally demanding and will quite litteraly crash your computer. The **deep_learning_approach** notebook is okay to "run all".
+
+---
+
 ## Language
 ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
 
@@ -64,8 +74,3 @@ Developed by Pierre LAGUE and François MULLER (@franzele21) at the University o
 
 ---
 
-# For Mr TOMMASI
-
-In order to evaluate our work you have the pdf report at the root of the folder as well as our notebooks and additionnal scripts in the script folder. For additionnal code, the archive folder will contain a wider range of our work.
-
-In the script folder, the standard classification methods are in the file named **standard_approaches.ipynb**, the Deep Learning approach is in the file named **deep_learning_approach.ipynb**. Both are commented and the outputs have not been cleared **we recommend to only clear the outputs if it is not counter-indicated**, some cells are extremely computationally demanding and will quite litteraly crash your computer (we bought the whole PC, we will use the whole PC). The **deep_learning_approach** notebook is okay to "run all".
